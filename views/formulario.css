@@ -1,0 +1,80 @@
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.box {
+    
+    text-align: left;
+    display:;
+    
+}
+
+.sub {
+    
+    display: table-cell;
+    padding-left: 20px;
+    width: 0px;
+    padding-bottom: 20px;
+    
+}
+
+.medio {
+    
+    width: 150px;
+    
+}
+
+.grande {
+    
+    padding-bottom: 100px;
+    
+}
+
+.peque {
+    
+    width: 70px;
+    
+}
+
+p {
+    
+    margin-bottom:0px;
+    
+}
+
+.button-enviar {
+    
+    margin: auto;
+    margin-top: 50px;
+    display:block;
+    width: 300px;
+    
+}
+
