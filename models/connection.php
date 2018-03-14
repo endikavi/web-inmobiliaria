@@ -1,6 +1,9 @@
 <?php
 
-//require_once ROOT . "/models/config.php";
+define("HOST","localhost");
+define("DBNAME","lindavista");
+define("USER","root");
+define("PASS","");
 	
 	try{
 		$pdo=new PDO('mysql:host=localhost;dbname=inmobiliaria','root','');

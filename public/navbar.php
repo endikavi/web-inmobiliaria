@@ -1,18 +1,21 @@
 
-
 <!DOCTYPE html>
 <html>
     <head>
     <title>Inicio</title>
 <link REL="stylesheet" TYPE="text/css" HREF="/inmobiliaria/public/stylesheets/navbar.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+    <style>
+        
+        </style>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-
+        
  </head>
     
 <body>
@@ -58,16 +61,31 @@
     <ul class="navbar-nav right">
     <li class="nav-item dropdown active">
        <?PHP
+        
+$UnregistedForm = <<<'EOT'
+            
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
+            <div class="dropdown-menu">
+            <form method="post" action="/inmobiliaria/controller/loginctrl.php">
+            <button class="dropdown-item" id="Reset" Style="display:none;">Volver</button>
+            <button class="dropdown-item" id="Register" >Registrarse</button>
+            <button class="dropdown-item" id="Login" >Entrar</button>
+            <input type="text" name="e" class="dropdown-item " id="Email" placeholder="Email address" required pattern='^[^@]+@[^@]+\.[^@]{2,3}$' minlength="8" maxlength="40" required Style="display:none;">
+            <input type="text" name="u" class="dropdown-item " id="Username" Style="display:none;" placeholder="Username" required pattern="[A-z0-9À-ž]{3,15}$" minlength="3" maxlength="15" required>
+            <input type="password" name="p" class="dropdown-item " id="Password" Style="display:none;" placeholder="Password" required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}" minlength="8" maxlength="40" required>
+            <input type="submit" class="dropdown-item " id="Submit" Style="display:none;">
+            </form>
+            </div>        
+EOT;
        
-       
-       print '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Usuario
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Registrarse</a>
-          <a class="dropdown-item" href="#">Entrar</a>
-        </div>';
-        //'<a class="nav-link" href="#">Usuario <img class="img-user" src="/inmobiliaria/public/images/usuario.jpeg"><span class="sr-only">(current)</span></a>'
+       if ($_SESSION['ID'] = 1){
+            print $UnregistedForm;
+       }else{
+           
+           print $_SESSION['ID'];
+           
+           
+       }
         
         
         
@@ -79,3 +97,56 @@
   </div>
 </nav>
     </div>
+    
+   <?php
+    print $_SESSION['ID'];
+    ?>
+
+ <script>
+        
+document.getElementById("Register").addEventListener("click",ViewRegisterForm);  
+     
+function ViewRegisterForm(){
+
+    document.getElementById('Reset').style.display = 'block';
+    document.getElementById('Email').style.display = 'block';
+    document.getElementById('Password').style.display = 'block';
+    document.getElementById('Username').style.display = 'block';
+    document.getElementById('Register').style.display = 'none';
+    document.getElementById('Login').style.display = 'none';
+    document.getElementById('Submit').style.display = 'block';
+       
+}
+     
+document.getElementById("Login").addEventListener("click",ViewLoginForm);
+
+function ViewLoginForm(){
+    
+    document.getElementById('Reset').style.display = 'block';
+    document.getElementById('Password').style.display = 'block';
+    document.getElementById('Username').style.display = 'none';
+    document.getElementById('Email').style.display = 'block';
+    document.getElementById('Register').style.display = 'none';
+    document.getElementById('Login').style.display = 'none';
+    document.getElementById('Submit').style.display = 'block';
+    
+}
+     
+document.getElementById("Reset").addEventListener("click",ViewReset);
+
+function ViewReset(){
+
+    document.getElementById('Reset').style.display = 'none';
+    document.getElementById('Email').style.display = 'none';
+    document.getElementById('Password').style.display = 'none';
+    document.getElementById('Username').style.display = 'none';
+    document.getElementById('Email').value = '';
+    document.getElementById('Password').value = '';
+    document.getElementById('Username').value = '';
+    document.getElementById('Register').style.display = 'block';
+    document.getElementById('Login').style.display = 'block';
+    document.getElementById('Submit').style.display = 'none';
+    
+}        
+        
+</script>   

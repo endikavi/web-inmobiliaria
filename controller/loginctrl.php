@@ -1,21 +1,16 @@
 <?PHP
-if (! defined("ROOT")) {require 'C:\xampp\htdocs\inmobiliaria/config.php';}
+//root
+if (! defined("ROOT")) { define("ROOT",'C:/xampp/htdocs/inmobiliaria');}
 
-if ( !empty($_POST['a'])){
+if ( !empty($_POST['e'])){
     
     require ROOT . '/models/adduser.php';
     
 }
 
-if ( !empty($_POST['l'])){
+if ( empty($_POST['e'])){
 
-    require ROOT . '/views/login.php';
+    require ROOT . '/views/checkuser.php';
 
-}
-
-if ( empty($_POST['a']) && empty($_POST['l']) && empty($_POST['r']) && empty($_POST['c'])){
-    
-    require ROOT . '/views/login.php';
-    
 }
 ?>

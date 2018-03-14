@@ -1,5 +1,7 @@
 <?php
 
+if (! defined("ROOT")) {require 'C:\xampp\htdocs\inmobiliaria/config.php';}
+
 function verificar_email($email) 
 {
   if(preg_match('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9À-ž]{1,3}\.[0-9À-ž]{1,3}\.[0-9À-ž]{1,3}\.[0-9À-ž]{1,3}])|(([a-zA-ZÀ-ž\-0-9]+\.)+[a-zA-ZÀ-ž]{2,3}))$/',$email))
@@ -25,8 +27,8 @@ function verificar_password($password)
   return false;
 }
 
-if ( !empty($_POST['e']) && !empty($_POST['u']) && !empty($_POST['p']) && !empty($_POST['a']) ){
-    if (verificar_email($_POST['e']) && verificar_username($_POST['u']) && verificar_password($_POST['p']) && $_POST['a'] === "true"){
+if ( !empty($_POST['e']) && !empty($_POST['u']) && !empty($_POST['p'])){
+    if (verificar_email($_POST['e']) && verificar_username($_POST['u']) && verificar_password($_POST['p'])){
         
             $email = $_POST['e'];
             $username = $_POST['u'];   
@@ -43,7 +45,9 @@ if ( !empty($_POST['e']) && !empty($_POST['u']) && !empty($_POST['p']) && !empty
             if($result==false){
 	           echo "ERROR:No fue posible ejecutar $sql  ".print_r($pdo->errorInfo());
             }
-            else{
+            else{    
+               define("USERNAME",$username);
+               define("ID",$id); 
 	           require ROOT . '/controller/mainctrl.php';
             }
             //cierra conexión
