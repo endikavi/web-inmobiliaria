@@ -60,10 +60,8 @@
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Busqueda</button>
     </form>
     <ul class="navbar-nav right">
-    <li class="nav-item dropdown active">
-       <?PHP
         
-$UnregistedForm = <<<'EOT'
+    <li class="nav-item dropdown active" id="offUser">
             
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
             <div class="dropdown-menu">
@@ -77,22 +75,38 @@ $UnregistedForm = <<<'EOT'
             <input type="hidden" name="key" value="userLog" required>
             <input type="submit" class="dropdown-item " id="Submit" Style="display:none;">
             </form>
-            </div>        
-EOT;
-       
-       if ($_SESSION['ID'] = 1){
-            print $UnregistedForm;
-       }else{
-           
-           print $_SESSION['ID'];
-           
-           
-       }
+            </div> 
         
-        
-        
-        ?>
       </li>
+        
+        <li class="nav-item dropdown active" id="onUser">
+            
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Mi usuario
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">Administrar cuenta</a>
+          <a class="dropdown-item" href="#">Ver favoritos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Salir</a>
+        </div>
+            
+      </li>
+        
+        <li class="nav-item dropdown active" id="adminUser">
+            
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Zona Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/inmobiliaria/views/addnoticeform.php">Administrar Inmuebles</a>
+          <a class="dropdown-item" href="#">Administrar Noticias</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Administrar Usuarios</a>
+        </div>
+            
+      </li>
+        
      </ul>
       
       </div>

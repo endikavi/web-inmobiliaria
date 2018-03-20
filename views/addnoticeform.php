@@ -9,6 +9,8 @@
     </head>
     <body>
     
+        <div id="addPropertyForm">
+        
         <form enctype="multipart/form-data" method="post" action="/inmobiliaria/controller/addproperty.php">
         
         <div style="width:800px;margin:auto;text-align:center;" >
@@ -272,7 +274,9 @@
         </div>
             <button id="enviar" class="btn btn-lg btn-primary btn-block button-enviar" type="submit">Añadir</button>
         </form>
-    
+        </div>
+        <div id="deletePropertyForm">
+        </div>
     
     </body>  
 </html>
