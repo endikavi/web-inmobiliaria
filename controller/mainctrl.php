@@ -1,41 +1,42 @@
 <?PHP
-//root
-if (! defined("ROOT")) { define("ROOT",'C:/xampp/htdocs/inmobiliaria');}
-//ejecuta la funcion que se le indique
-if( !empty( $_GET['metodo'] ) ) {
-     
-    $metodo = $_GET['metodo'];
-    $metodo();
-}else{viewIndex();}
 
-if( empty( $_SESSION['ID'] ) ) {
-inciarSesion(); 
+if (! defined("ROOT")) {
+    define("ROOT",'C:/xampp/htdocs/inmobiliaria');
 }
+
+if( !empty( $_POST['key'] ) ) {
+     
+    $metodo = $_POST['key'];
+    $metodo();
+    
+}else{viewIndex();}
 
 function viewIndex(){
     
-    require ROOT . '/config/session-config.php';
     require ROOT . '/public/navbar.php';
     require ROOT . '/public/slider.php';
     require ROOT . '/public/main-content.php';
     
 }
 
-function iniciarSesion(){
+function viewPropertyGallery(){
     
-    require ROOT . '/config/session-config.php';
-    
-}
-
-function viewGallery(){
-    
-    
+    require ROOT . '/public/navbar.php';
+    require ROOT . '/views/property-gallery.php';
     
 }
 
-function viewManager(){
+function viewNoticeGallery(){
     
+    require ROOT . '/public/navbar.php';
+    require ROOT . '/views/notice-gallery.php';
     
+}
+
+function viewUserGallery(){
+    
+    require ROOT . '/public/navbar.php';
+    require ROOT . '/views/notice-gallery.php';
     
 }
 
@@ -43,18 +44,18 @@ function userLog(){
 
 	if ( !empty($_POST['e'])){
     
+        require ROOT . '/models/checkdata.php';
     	require ROOT . '/models/adduser.php';
     
 	}
 
 	if ( empty($_POST['e'])){
-
-    	require ROOT . '/models/checkuser.php';
+        
+        require ROOT . '/models/checkdata.php';
+    	require ROOT . '/models/password-compare.php';
 
 	}
 }
-
-function
 
 
 

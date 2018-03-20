@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+
 <html>
     <head>
     <title>Inicio</title>
@@ -66,13 +67,14 @@ $UnregistedForm = <<<'EOT'
             
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
             <div class="dropdown-menu">
-            <form method="post" action="/inmobiliaria/controller/loginctrl.php">
+            <form method="post" action="/inmobiliaria/">
             <button class="dropdown-item" id="Reset" Style="display:none;">Volver</button>
             <button class="dropdown-item" id="Register" >Registrarse</button>
             <button class="dropdown-item" id="Login" >Entrar</button>
             <input type="text" name="e" class="dropdown-item " id="Email" placeholder="Email address" required pattern='^[^@]+@[^@]+\.[^@]{2,3}$' minlength="8" maxlength="40" required Style="display:none;">
-            <input type="text" name="u" class="dropdown-item " id="Username" Style="display:none;" placeholder="Username" required pattern="[A-z0-9À-ž]{3,15}$" minlength="3" maxlength="15" required>
+            <input type="text" name="u" class="dropdown-item " id="Username" Style="display:none;" placeholder="Username" required pattern="[A-z0-9À-ž]{3,15}$" minlength="3" maxlength="15">
             <input type="password" name="p" class="dropdown-item " id="Password" Style="display:none;" placeholder="Password" required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}" minlength="8" maxlength="40" required>
+            <input type="hidden" name="key" value="userLog" required>
             <input type="submit" class="dropdown-item " id="Submit" Style="display:none;">
             </form>
             </div>        
@@ -97,56 +99,3 @@ EOT;
   </div>
 </nav>
     </div>
-    
-   <?php
-    print $_SESSION['ID'];
-    ?>
-
- <script>
-        
-document.getElementById("Register").addEventListener("click",ViewRegisterForm);  
-     
-function ViewRegisterForm(){
-
-    document.getElementById('Reset').style.display = 'block';
-    document.getElementById('Email').style.display = 'block';
-    document.getElementById('Password').style.display = 'block';
-    document.getElementById('Username').style.display = 'block';
-    document.getElementById('Register').style.display = 'none';
-    document.getElementById('Login').style.display = 'none';
-    document.getElementById('Submit').style.display = 'block';
-       
-}
-     
-document.getElementById("Login").addEventListener("click",ViewLoginForm);
-
-function ViewLoginForm(){
-    
-    document.getElementById('Reset').style.display = 'block';
-    document.getElementById('Password').style.display = 'block';
-    document.getElementById('Username').style.display = 'none';
-    document.getElementById('Email').style.display = 'block';
-    document.getElementById('Register').style.display = 'none';
-    document.getElementById('Login').style.display = 'none';
-    document.getElementById('Submit').style.display = 'block';
-    
-}
-     
-document.getElementById("Reset").addEventListener("click",ViewReset);
-
-function ViewReset(){
-
-    document.getElementById('Reset').style.display = 'none';
-    document.getElementById('Email').style.display = 'none';
-    document.getElementById('Password').style.display = 'none';
-    document.getElementById('Username').style.display = 'none';
-    document.getElementById('Email').value = '';
-    document.getElementById('Password').value = '';
-    document.getElementById('Username').value = '';
-    document.getElementById('Register').style.display = 'block';
-    document.getElementById('Login').style.display = 'block';
-    document.getElementById('Submit').style.display = 'none';
-    
-}        
-        
-</script>   

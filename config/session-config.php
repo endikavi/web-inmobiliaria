@@ -36,7 +36,7 @@ if ( empty($_POST['e']) && empty($_POST['u'])){
     unset($_SESSION['USER']);
     unset($_SESSION['ADMIN']);
     session_destroy();
-    if( empty( $_SESSION['ID'] ) ) {
+    /*if( empty( $_SESSION['ID'] ) ) {
         $_SESSION['ID'] = 1;  
         if( empty( $_SESSION['USER'] ) ) {
             $_SESSION['USER'] = "Unregistered";  
@@ -44,6 +44,6 @@ if ( empty($_POST['e']) && empty($_POST['u'])){
         if( empty( $_SESSION['ADMIN'] ) ) {
             $_SESSION['ADMIN'] = false;  
         }
-    }
+    }*/
 }
 ?>
