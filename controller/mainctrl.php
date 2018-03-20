@@ -23,7 +23,7 @@ function viewIndex(){
 
 function iniciarSesion(){
     
-    require ROOT . '/session-config.php';
+    require ROOT . '/config/session-config.php';
     
 }
 
@@ -38,5 +38,24 @@ function viewManager(){
     
     
 }
+
+function userLog(){
+
+	if ( !empty($_POST['e'])){
+    
+    	require ROOT . '/models/adduser.php';
+    
+	}
+
+	if ( empty($_POST['e'])){
+
+    	require ROOT . '/models/checkuser.php';
+
+	}
+}
+
+function
+
+
 
 ?>
