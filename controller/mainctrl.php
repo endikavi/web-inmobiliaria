@@ -1,9 +1,5 @@
 <?PHP
 
-if (! defined("ROOT")) {
-    define("ROOT",'C:/xampp/htdocs/inmobiliaria');
-}
-
 if( !empty( $_POST['key'] ) ) {
      
     $metodo = $_POST['key'];
@@ -24,6 +20,7 @@ function viewPropertyGallery(){
     
     require ROOT . '/public/navbar.php';
     require ROOT . '/views/property-gallery.php';
+    require ROOT . '/public/fotter.php';
     
 }
 
@@ -31,6 +28,7 @@ function viewNoticeGallery(){
     
     require ROOT . '/public/navbar.php';
     require ROOT . '/views/notice-gallery.php';
+    require ROOT . '/public/fotter.php';
     
 }
 
@@ -38,6 +36,7 @@ function viewUserGallery(){
     
     require ROOT . '/public/navbar.php';
     require ROOT . '/views/notice-gallery.php';
+    require ROOT . '/public/fotter.php';
     
 }
 
@@ -54,6 +53,36 @@ function userLog(){
         
         require ROOT . '/models/checkdata.php';
     	require ROOT . '/models/password-compare.php';
+
+	}
+}
+
+function PropertyLog(){
+
+	if ( !empty($_POST['newProperty'])){
+    
+    	require ROOT . '/models/addproperty.php';
+    
+	}
+
+	if ( !empty($_POST['propertyID'])){
+        
+        require ROOT . '/models/removeproperty.php';
+
+	}
+}
+
+function NoticeLog(){
+
+	if ( !empty($_POST['newNotice'])){
+    
+    	require ROOT . '/models/addnotice.php';
+    
+	}
+
+	if ( !empty($_POST['noticeID'])){
+        
+        require ROOT . '/models/removenotice.php';
 
 	}
 }

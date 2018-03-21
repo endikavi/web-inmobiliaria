@@ -1,7 +1,7 @@
 <?php
 
 define("HOST","localhost");
-define("DBNAME","lindavista");
+define("DBNAME","inmobiliaria");
 define("USER","root");
 define("PASS","");
 	
