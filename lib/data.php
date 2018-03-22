@@ -12,46 +12,27 @@ define("PASS","");
 		die("ERROR:No fue posible conectarse ".$e->		getMessage());
 	}
 
-    $sqlSer='select * from servicios';
-    $sqlZo='select * from zonas';
-    $sqlIn='select * from inmuebles';
-    $sqlVo='select * from votos';
+    $sqlSer='select * from inmuebles I INNER JOIN servicios S ON I.id_inmueble=S.id_inmueble INNER JOIN votos V ON I.id_inmueble=V.id_inmueble INNER JOIN zonas Z ON I.id_inmueble=Z.id_inmueble';
 
             $querySer=$pdo->prepare($sqlSer);
             $querySer->execute();
-            $Ser = $querySer->fetchall();
                 
-            $queryZo=$pdo->prepare($sqlZo);
-            $queryZo->execute();
-            $Zo = $queryZo->fetchall();
+            if($querySer==false){
                 
-            $queryIn=$pdo->prepare($sqlIn);
-            $queryIn->execute();
-            $In = ($queryIn->fetchall());
-
-            $queryVo=$pdo->prepare($sqlVo);
-            $queryVo->execute();
-            $Vo = ($queryVo->fetchall());
-
-            $result = $Vo+$Zo+$In+$Ser;
-
-            print_r ($result);
-            print "<br><br>";
-            print_r (array_values($result));
-            print "<br><br>";
-
-            var_dump (array_values($result));
-            print "<br><br>";
-                
-            if($result==false){
-                
-	           echo "ERROR:No fue posible ejecutar $sql  ".print_r($pdo->errorInfo());
+	           echo "ERROR:No fue posible ejecutar $sqlSer  ".print_r($pdo->errorInfo());
                 
             }
             else{
                 
-              print "<br><br>";
-              var_dump (json_encode($result));
+            $result = array ();   
+                
+            while ($row = $querySer->fetch(PDO::FETCH_ASSOC)){
+                
+                $result[] = $row;
+                
+            }
+                
+              print ('{propiedades:' . json_encode($result) . '}');
                 
             }
             
