@@ -28,6 +28,7 @@ $acceso=($_POST['ac']);
 $plantas=($_POST['pl']);
 $descripcion=($_POST['de']);
 $imagenes=(json_encode(imageArray()));
+$fecha=(date(YmdHis))
 
 $dir_subida = 'C:\xampp\htdocs\inmobiliaria\public\images\ ';
 

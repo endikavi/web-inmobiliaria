@@ -1,4 +1,8 @@
-function llamada(data, type, url, dataType) {
+var inmuebles;
+var noticias;
+var usuarios;
+
+function llamada(data, type, url, dataType, inf) {
     $.ajax({
             data: data,
             type: type,
@@ -6,14 +10,13 @@ function llamada(data, type, url, dataType) {
             url: url,
         })
         .done(function (data, textStatus, jqXHR) {
-            console.log("La solicitud se ha completado correctamente.");
-        
-            if (type == "GET") {
-                obj = data;
-                console.log(obj);
-            }
-            console.log(data);
-          return true;
+				
+        	obj = JSON.parse(JSON.stringify(data));
+			console.log(obj);
+			if (inf == "inm"){inmuebles = obj}
+			if (inf == "not"){noticias = obj}
+			if (inf == "use"){usuarios = obj}
+
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
         console.log("La solicitud a fallado: " + textStatus);
@@ -27,11 +30,21 @@ function llamada(data, type, url, dataType) {
         console.log("ERROR:");
         console.log(jqXHR.status);
         console.log(data);
-        return false;
         })
         .always(function (jqXHR, data) {
-          console.log(data);
-          console.log("Fin de la llamada");
+		
+			if ($('#reciente').length == 1 && $('#popular').length == 1 && inmuebles !== undefined && noticias !== undefined){
+	
+				console.log('contenidos cargados');
+				fillHomeContent();
+		
+			}
+		
         });
 };
-llamada('', "GET", "/inmobiliaria/lib/data.php", "text");
+
+llamada('', "GET", "/inmobiliaria/lib/propertydata.php", "JSON", "inm");
+llamada('', "GET", "/inmobiliaria/lib/noticedata.php", "JSON", "not");
+if(UserData[1] == 1){
+	llamada('', "GET", "/inmobiliaria/lib/userdata.php", "JSON", "use");
+}

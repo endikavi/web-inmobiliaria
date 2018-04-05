@@ -4,6 +4,6 @@ if (! defined("ROOT")) {
     define("ROOT", __DIR__ ."/");
 }
 
-require '/controller/mainctrl.php';
+require ROOT . 'controller/mainctrl.php';
 
 ?>

@@ -23,7 +23,6 @@ if ( !empty($_POST['e']) && !empty($_POST['u']) && !empty($_POST['p'])){
                 define("USERNAME",$username);
                 define("ID",$id);
                 require ROOT . '/config/session-config.php';
-                viewIndex();
                 
             }
             

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Donokasa</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/portfolio-item.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Donokasa</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Inmuebles</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Noticias</a>
+            </li>
+
+			  
+	
+		<li class="nav-item dropdown active" id="onUser">   
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Mi usuario
+        </a>
+			
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			
+			<form method="post" action="/inmobiliaria/">
+			<div id="Reset" Style="display:none;">	
+		    <button type="button" class="dropdown-item" >Volver</button>
+			<div class="dropdown-divider"></div>
+			</div>
+            <button type="button" class="dropdown-item" id="Register" >Registrarse</button>
+            <button type="button" class="dropdown-item" id="Login" >Entrar</button>
+            <input type="text" name="e" class="dropdown-item " id="Email" placeholder="Email address" required pattern='^[^@]+@[^@]+\.[^@]{2,3}$' minlength="8" maxlength="40" required Style="display:none;">
+            <input type="text" name="u" class="dropdown-item " id="Username" Style="display:none;" placeholder="Username" required pattern="[A-z0-9À-ž]{3,15}$" minlength="3" maxlength="15">
+            <input type="password" name="p" class="dropdown-item " id="Password" Style="display:none;" placeholder="Password" required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}" minlength="8" maxlength="40" required>
+            <input type="hidden" name="key" value="userLog" required>
+			<div id="Submit" Style="display:none;">
+			<div class="dropdown-divider"></div>
+			<button type="submit" class="dropdown-item">Enviar</button>
+			</div>
+            </form>
+			
+		  <div id="Admin" Style="display:none;">	
+		  <a class="dropdown-item" href="#">Administrar Inmuebles</a>
+          <a class="dropdown-item" href="#">Administrar Noticias</a>
+          <a class="dropdown-item" href="#">Administrar Usuarios</a>
+		  <div class="dropdown-divider"></div>
+		  </div>
+			
+		  <div id="Exit" Style="display:none;">
+          <a class="dropdown-item" href="#">Salir</a>
+		  </div>
+        </div>    
+		</li>
+			  
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+			  
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Portfolio Item Heading -->
+      <h1 class="my-4">Bienvenido
+        <small>Busque y encuentre su oferta</small>
+      </h1>
+
+      <!-- Portfolio Item Row -->
+      <div class="row">
+
+        <div class="col-md-8">
+          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3">Conoce Donokasa?</h3>
+          <p>Trabajamos para ofrecer servicios inmobiliarios de calidad tanto a empresas como a particulares. Nuestra mayor garantía es la satisfacción de nuestros clientes.Estamos especializados en la intemediación y asesoramiento en la compra y alquiler de naves industriales.</p>
+          <h3 class="my-3">Nuestros compromisos</h3>
+          <ul>
+            <li>Seguridad</li>
+            <li>Calidad</li>
+            <li>Velocidad</li>
+			<li>Compromiso</li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+      <!-- Related Projects Row -->
+      <h3 class="my-4">Mas Reciente</h3>
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+      </div>
+      <!-- /.row -->
+		
+<!-- Related Projects Row -->
+      <h3 class="my-4">Mas visitado</h3>
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Donokasa 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+	<!-- Control de formulario de usuario -->
+	<script type="text/javascript" src="js/logform.js"></script>
+
+  </body>
+
+</html>

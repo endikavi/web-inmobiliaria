@@ -1,5 +1,7 @@
 <?PHP
 
+session_start();
+
 if( !empty( $_POST['key'] ) ) {
      
     $metodo = $_POST['key'];
@@ -8,53 +10,33 @@ if( !empty( $_POST['key'] ) ) {
 }else{viewIndex();}
 
 function viewIndex(){
-    
+	
+    printUserData();
+	require ROOT . '/public/head.php';
     require ROOT . '/public/navbar.php';
-    require ROOT . '/public/slider.php';
-    require ROOT . '/public/main-content.php';
+    require ROOT . '/public/home-content.php';
     require ROOT . '/public/fotter.php';
-    
-}
-
-function viewPropertyGallery(){
-    
-    require ROOT . '/public/navbar.php';
-    require ROOT . '/views/property-gallery.php';
-    require ROOT . '/public/fotter.php';
-    
-}
-
-function viewNoticeGallery(){
-    
-    require ROOT . '/public/navbar.php';
-    require ROOT . '/views/notice-gallery.php';
-    require ROOT . '/public/fotter.php';
-    
-}
-
-function viewUserGallery(){
-    
-    require ROOT . '/public/navbar.php';
-    require ROOT . '/views/notice-gallery.php';
-    require ROOT . '/public/fotter.php';
-    
+	
 }
 
 function userLog(){
 
-	if ( !empty($_POST['e'])){
+	if ( !empty($_POST['u'])){
     
         require ROOT . '/models/checkdata.php';
     	require ROOT . '/models/adduser.php';
     
 	}
 
-	if ( empty($_POST['e'])){
+	if ( empty($_POST['u'])){
         
         require ROOT . '/models/checkdata.php';
-    	require ROOT . '/models/password-compare.php';
+    	require ROOT . '/models/checkuser.php';
 
 	}
+	
+	viewIndex();
+	
 }
 
 function PropertyLog(){
@@ -87,6 +69,25 @@ function NoticeLog(){
 	}
 }
 
+function printUserData(){
 
+	if ( !empty($_SESSION['ID'])){
+	
+		print ("<span id='Username' Style='display:none;'>'" . $_SESSION['USER'] . "'</span>");
+		print ("<span id='Userpri' Style='display:none;'>" . $_SESSION['ADMIN'] . "</span>");
+	
+	}
+	
+}
+
+function userExit(){
+	
+	unset($_SESSION['ID']);
+    unset($_SESSION['USER']);
+    unset($_SESSION['ADMIN']);
+    session_destroy();
+	header("Location: /inmobiliaria");
+		
+}
 
 ?>
