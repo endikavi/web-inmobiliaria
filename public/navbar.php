@@ -3,7 +3,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Donokasa</a>
+        <a class="navbar-brand" href="">Donokasa</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,10 +11,10 @@
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item active">
-              <a class="nav-link" href="#">Inmuebles</a>
+              <a class="nav-link" href="#" id="GalleryPro">Inmuebles</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Noticias</a>
+              <a class="nav-link" href="#" id="GalleryNot">Noticias</a>
             </li>
 
 			  
@@ -44,7 +44,11 @@
             </form>
 			
 		  <div id="Admin" Style="display:none;">
-          <a class="dropdown-item" href="#">Administrar Usuarios</a>
+          	<a class="dropdown-item" id="GalleryUser" href="#">Administrar Usuarios</a>
+		  <div class="dropdown-divider"></div>
+			<a class="dropdown-item" id="NewProForm" href="#">Añadir Propiedad</a>
+			<a class="dropdown-item" id="NewNotForm" href="#">Añadir Noticia</a>
+			<a class="dropdown-item" id="NewUserForm" href="#">Añadir Usuario</a>
 		  <div class="dropdown-divider"></div>
 		  </div>
 			

@@ -1,7 +1,5 @@
 <?php
 
-if (! defined("ROOT")) {require 'C:\xampp\htdocs\inmobiliaria/config.php';}
-
 $tipo=($_POST['t']);
 $situacion=($_POST['si']);
 $metros=($_POST['m']);
@@ -22,53 +20,54 @@ $piscina=($_POST['pi']);
 $garaje=($_POST['ga']);
 $ascensor=($_POST['as']);
 $zona=($_POST['zo']);
-$baños=($_POST['ba']);
+$banos=($_POST['ba']);
 $habitaciones=($_POST['ha']);
 $acceso=($_POST['ac']);
 $plantas=($_POST['pl']);
 $descripcion=($_POST['de']);
-$imagenes=(json_encode(imageArray()));
-$fecha=(date(YmdHis))
-
-$dir_subida = 'C:\xampp\htdocs\inmobiliaria\public\images\ ';
-
-function imageArray(){
-    $imagenes= array();
-    foreach ($_FILES["file"]["error"] as $clave => $error) {
-        
-        if ($error == UPLOAD_ERR_OK) {
-            
-            $imagenes[] = $_FILES["file"]["name"][$clave];
-            
-        }
-        
-    }
-    return $imagenes;
-}
-
-foreach ($_FILES["file"]["error"] as $clave => $error) {
-    if ($error == UPLOAD_ERR_OK) {
-        $nombre_tmp = $_FILES["file"]["tmp_name"][$clave];
-        $nombre = basename($_FILES["file"]["name"][$clave]);
-        move_uploaded_file($nombre_tmp, $dir_subida.$nombre);
-    }
-}
-
-require (ROOT . '/models/connection.php');
-
+$fecha=(date('YmdHis'));
+$salon=($_POST['Sal']);
+$desvan=($_POST['Desv']);
+$sotano=($_POST['sota']);
+$cocina=($_POST['coci']);
 $id = strlen($descripcion) * strlen($metros) - strlen($pertenencia) + rand(1,50) * rand (10,2000) . strlen($provincia);
 
-$sql="INSERT INTO inmuebles (id_inmueble,tipo,localizacion,situacion,descripcion,metroscuadrados,valor,categoria,pertenencia) VALUES ($id,'$tipo','$provincia,$ciudad,$calle,$puerta','$situacion','$descripcion',$metros,$precio,$categoria,'$pertenencia')";
+$imagenes=(imageArray($id));
+$imagenpri = "/inmobiliaria/public/images/" . $id . $key . "0-" . $_FILES["file"]["name"][0];
 
+function imageArray($id){
+	$dir_subida = 'F:/xampp/htdocs/inmobiliaria/public/images/';
+	$imagenes = " Imagenes ";
+	
+	foreach ($_FILES["file"]["error"] as $key => $error){	
+        
+       	$imagenes = $id . $key . "-" . $_FILES["file"]["name"][$key] . " , " . $imagenes;
+		
+        $nombre_tmp = $_FILES["file"]["tmp_name"][$key];
+		
+        $nombre = basename($_FILES["file"]["name"][$key]);
+		
+        move_uploaded_file($nombre_tmp, $dir_subida . $id . $key . "-" . $nombre);
+		
+    }
+	
+	print $imagenes;
+    return $imagenes;
+	
+}
+
+require ('connection.php');
+
+$sql="INSERT INTO inmuebles (id_inmueble,tipo,localizacion,provincia,ciudad,calle,situacion,descripcion,metroscuadrados,valor,categoria,pertenencia,imagenes,fecha,imagenpri) VALUES ($id,'$tipo','$provincia,$ciudad,$calle,$puerta','$provincia','$ciudad','$calle,$puerta','$situacion','$descripcion',$metros,$precio,$categoria,'$pertenencia','$imagenes',$fecha,'$imagenpri'); INSERT INTO zonas (id_inmueble,banos,habitaciones,jardin,terraza,balcon,patio,piscina,garaje,ascensor,pisos,cocina,sotano,desvan,salon) VALUES ($id,$banos,$habitaciones,$jardin,$terraza,$balcon,$patio,$piscina,$garaje,$ascensor,$plantas,$cocina,$sotano,$desvan,$salon); INSERT INTO servicios (id_inmueble,conserje,seguridad,accesominusvalidos,zonacomunitaria) VALUES ($id,$conserje,$seguridad,$acceso,$zona); INSERT INTO votos (visitas,id_inmueble) VALUES (1,$id)";
 
 $result=$pdo->exec($sql);
-
+print_r ($result);
 
 if($result==false){
     echo "ERROR:No fue posible ejecutar $sql  ".print_r($pdo->errorInfo());
-}else{
-    require ROOT . '/controller/mainctrl.php';
-}
+}else{header("Location: /inmobiliaria");}
+
+
 
 unset($pdo);
 

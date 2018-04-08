@@ -20,19 +20,23 @@ function viewIndex(){
 }
 
 function userLog(){
+	
+	if ( empty($_SESSION['ID'])){
 
-	if ( !empty($_POST['u'])){
+		if ( !empty($_POST['u'])){
     
-        require ROOT . '/models/checkdata.php';
-    	require ROOT . '/models/adduser.php';
+        	require ROOT . '/models/checkdata.php';
+    		require ROOT . '/models/adduser.php';
     
-	}
+		}
 
-	if ( empty($_POST['u'])){
+		if ( empty($_POST['u'])){
         
-        require ROOT . '/models/checkdata.php';
-    	require ROOT . '/models/checkuser.php';
+        	require ROOT . '/models/checkdata.php';
+    		require ROOT . '/models/checkuser.php';
 
+		}
+		
 	}
 	
 	viewIndex();
