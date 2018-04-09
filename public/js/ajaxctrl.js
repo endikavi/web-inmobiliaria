@@ -4,11 +4,11 @@ var usuarios;
 
 function llamada(data, type, url, dataType, inf) {
     $.ajax({
-            data: data,
-            type: type,
-            dataType: dataType,
-            url: url,
-        })
+		data: data, 
+		type: type, 
+		dataType: dataType, 
+		url: url,
+	})
         .done(function (data, textStatus, jqXHR) {
 				
         	obj = JSON.parse(JSON.stringify(data));
@@ -47,4 +47,16 @@ llamada('', "GET", "/inmobiliaria/lib/propertydata.php", "JSON", "inm");
 llamada('', "GET", "/inmobiliaria/lib/noticedata.php", "JSON", "not");
 if(UserData[1] == 1){
 	llamada('', "GET", "/inmobiliaria/lib/userdata.php", "JSON", "use");
+}
+
+function PropertyRemove(id){
+	
+	var rurl = "/inmobiliaria/lib/propertyremove.php?ID=" + id;
+	
+	if(UserData[1] == 1){
+	
+	llamada('', "GET", rurl , "TEXT", "");
+		
+	}else{console.log("No eres administrador")}
+
 }

@@ -12,6 +12,7 @@
 
 	<script type="text/javascript" src="/inmobiliaria/public/js/logctrl.js"></script>
 	<script type="text/javascript" src="/inmobiliaria/public/js/ajaxctrl.js"></script>
+	<script type="text/javascript" src="/inmobiliaria/public/js/paginador.js"></script>
 	<script type="text/javascript" src="/inmobiliaria/public/js/contentctrl.js"></script>
 </body>
 </html>

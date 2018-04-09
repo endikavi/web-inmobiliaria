@@ -11,7 +11,5 @@ define("PASS","");
 	catch(PDOException $e){
 		die("ERROR:No fue posible conectarse ".$e->		getMessage());
 	}
-	
-//unset($pdo);
 
 ?>

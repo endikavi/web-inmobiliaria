@@ -25,3 +25,15 @@ label:hover {
  cursor:pointer;
 }
 
+
+.easyPaginateNav{
+    position:absolute;
+    
+    width: 99%;
+    top: 33px;
+   color:black;
+   
+  
+}
+.easyPaginateNav a { font-weight:bolder;margin:1px;padding:3px;border-style: solid;border-width: 1px;background-color: white;border-radius: 6px;color:black;}
+.easyPaginateNav a.current {text-decoration:underline;color:red;background-color:black;}
