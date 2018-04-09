@@ -60,3 +60,16 @@ function PropertyRemove(id){
 	}else{console.log("No eres administrador")}
 
 }
+
+function UserRemove(id){
+	
+	var rurl = "/inmobiliaria/lib/userremove.php?ID=" + id;
+	
+	if(UserData[1] == 1){
+	
+	llamada('', "GET", rurl , "TEXT", "");
+		
+	}else{console.log("No eres administrador")}
+
+}
+

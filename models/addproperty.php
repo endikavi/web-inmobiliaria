@@ -36,7 +36,7 @@ $imagenes=(imageArray($id));
 $imagenpri = "/inmobiliaria/public/images/" . $id . $key . "0-" . $_FILES["file"]["name"][0];
 
 function imageArray($id){
-	$dir_subida = 'F:/xampp/htdocs/inmobiliaria/public/images/';
+	$dir_subida = '../public/images/';
 	$imagenes = " Imagenes ";
 	
 	foreach ($_FILES["file"]["error"] as $key => $error){	

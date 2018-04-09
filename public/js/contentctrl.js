@@ -8,7 +8,7 @@ function ViewGalleryPro(){
 	
 	$('#contenido').empty();
 	
-	$('<br><br><div class="row"> <div class="col-lg-8"> <h1 class="page-header">Galeria <small>Inmuebles</small> </h1> </div><div class="col-lg-4"><button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseBusqueda" aria-expanded="false" > <h3>Busqueda avanzada</h3> </button></div></div><div class="row"> <div class="col-lg-12"><div class="collapse" id="collapseBusqueda"> <br><div class="card card-body"> <div class="row"><div class="col-md-2"><button class="btn btn-info" type="button" id="EmpezarBusqueda" aria-expanded="false" > <h3>Buscar</h3> </button></div><div class="col-md-2"><p>Tipo:</p><label for="tipo" class="sr-only">Tipo:</label> <select name="tipo" id="tipo" class="form-control medio" ><option value="local">Local</option><option value="tierras">Tierras</option><option value="apartamento">Apartamento</option><option value="chalet">Chalet</option><option value="parcela">Parcela</option></select><p>Situacion:</p><label for="situacion" class="sr-only">Situación:</label> <select type="text" name="situacion" id="situacion" class="form-control medio" placeholder="Situacion..." ><option value="venta">Venta</option><option value="alquiler">Alquiler</option></select></div><div class="col-md-2"><p>Provincia:</p><label for="provincia" class="sr-only">Provincia:</label> <select name="provincia" id="provincia" class="form-control medio" placeholder="Provincia" busqueda="1"><option value="alava">Álava</option><option value="albacete">Albacete</option><option value="alicante">Alicante/Alacant</option><option value="almeria">Almería</option><option value="asturias">Asturias</option><option value="avila">Ávila</option><option value="badajoz">Badajoz</option><option value="barcelona">Barcelona</option><option value="burgos">Burgos</option><option value="caceres">Cáceres</option><option value="cadiz">Cádiz</option><option value="cantabria">Cantabria</option><option value="castellon">Castellón/Castelló</option><option value="ceuta">Ceuta</option><option value="ciudadreal">Ciudad Real</option><option value="cordoba">Córdoba</option><option value="cuenca">Cuenca</option><option value="girona">Girona</option><option value="laspalmas">Las Palmas</option><option value="granada">Granada</option><option value="guadalajara">Guadalajara</option><option value="guipuzcoa">Guipúzcoa</option><option value="huelva">Huelva</option><option value="huesca">Huesca</option><option value="illesbalears">Illes Balears</option><option value="jaen">Jaén</option><option value="acoruña">A Coruña</option><option value="larioja">La Rioja</option><option value="leon">León</option><option value="lleida">Lleida</option><option value="lugo">Lugo</option><option value="madrid">Madrid</option><option value="malaga">Málaga</option><option value="melilla">Melilla</option><option value="murcia">Murcia</option><option value="navarra">Navarra</option><option value="ourense">Ourense</option><option value="palencia">Palencia</option><option value="pontevedra">Pontevedra</option><option value="salamanca">Salamanca</option><option value="segovia">Segovia</option><option value="sevilla">Sevilla</option><option value="soria">Soria</option><option value="tarragona">Tarragona</option><option value="santacruztenerife">Santa Cruz de Tenerife</option><option value="teruel">Teruel</option><option value="toledo">Toledo</option><option value="valencia">Valencia/Valéncia</option><option value="valladolid">Valladolid</option><option value="vizcaya">Vizcaya</option><option value="zamora">Zamora</option><option value="zaragoza">Zaragoza</option></select><p>Ciudad:</p><label for="ciudad" class="sr-only">Ciudad:</label> <input default="0" type="text" name="ciudad" id="ciudad" class="form-control medio" placeholder="Ciudad..." busqueda="1" > </div><div class="col-md-2"><p>Baños:</p><label for="baños" class="sr-only">baños:</label> <input type="number" name="baños" id="baños" class="form-control peque" placeholder="0" min="0" busqueda="1"> <p>Habitaciones:</p><label for="habitaciones" class="sr-only">habitaciones:</label> <input type="number" default="0" name="habitaciones" id="habitaciones" class="form-control peque" placeholder="0" min="0" busqueda="1" > </div><div class="col-md-2"><p>Salon:</p><label for="baños" class="sr-only">Salon:</label> <input type="number" name="salon" id="salon" class="form-control peque" placeholder="0" min="0" busqueda="1"> <p>cocina:</p><label for="habitaciones" class="sr-only">cocina:</label> <input type="number" default="0" name="cocina" id="cocina" class="form-control peque" placeholder="0" min="0" busqueda="1" > </div></div></div></div></div></div><hr><div id="galleryContent" > </div>').appendTo('#contenido');
+	$('<br><br><div class="row"> <div class="col-lg-8"> <h1 class="page-header">Galeria <small>Inmuebles</small> </h1> </div><div class="col-lg-4"><button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseBusqueda" aria-expanded="false" > <h3>Busqueda avanzada</h3> </button></div></div><div class="row"> <div class="col-lg-12"><div class="collapse" id="collapseBusqueda"> <br><div class="card card-body"> <div class="row"><div class="col-md-2"><button class="btn btn-info" type="button" id="EmpezarBusqueda" aria-expanded="false" > <h3>Buscar</h3> </button></div><div class="col-md-2"><p>Tipo:</p><label for="tipo" class="sr-only">Tipo:</label> <select name="tipo" id="tipo" class="form-control medio" ><option value="local">Local</option><option value="tierras">Tierras</option><option value="apartamento">Apartamento</option><option value="chalet">Chalet</option><option value="Nave industrial">Nave industrial</option><option value="parcela">Parcela</option></select><p>Situacion:</p><label for="situacion" class="sr-only">Situación:</label> <select type="text" name="situacion" id="situacion" class="form-control medio" placeholder="Situacion..." ><option value="venta">Venta</option><option value="alquiler">Alquiler</option></select></div><div class="col-md-2"><p>Provincia:</p><label for="provincia" class="sr-only">Provincia:</label> <select name="provincia" id="provincia" class="form-control medio" placeholder="Provincia" busqueda="1"><option value="alava">Álava</option><option value="albacete">Albacete</option><option value="alicante">Alicante/Alacant</option><option value="almeria">Almería</option><option value="asturias">Asturias</option><option value="avila">Ávila</option><option value="badajoz">Badajoz</option><option value="barcelona">Barcelona</option><option value="burgos">Burgos</option><option value="caceres">Cáceres</option><option value="cadiz">Cádiz</option><option value="cantabria">Cantabria</option><option value="castellon">Castellón/Castelló</option><option value="ceuta">Ceuta</option><option value="ciudadreal">Ciudad Real</option><option value="cordoba">Córdoba</option><option value="cuenca">Cuenca</option><option value="girona">Girona</option><option value="laspalmas">Las Palmas</option><option value="granada">Granada</option><option value="guadalajara">Guadalajara</option><option value="guipuzcoa">Guipúzcoa</option><option value="huelva">Huelva</option><option value="huesca">Huesca</option><option value="illesbalears">Illes Balears</option><option value="jaen">Jaén</option><option value="acoruña">A Coruña</option><option value="larioja">La Rioja</option><option value="leon">León</option><option value="lleida">Lleida</option><option value="lugo">Lugo</option><option value="madrid">Madrid</option><option value="malaga">Málaga</option><option value="melilla">Melilla</option><option value="murcia">Murcia</option><option value="navarra">Navarra</option><option value="ourense">Ourense</option><option value="palencia">Palencia</option><option value="pontevedra">Pontevedra</option><option value="salamanca">Salamanca</option><option value="segovia">Segovia</option><option value="sevilla">Sevilla</option><option value="soria">Soria</option><option value="tarragona">Tarragona</option><option value="santacruztenerife">Santa Cruz de Tenerife</option><option value="teruel">Teruel</option><option value="toledo">Toledo</option><option value="valencia">Valencia/Valéncia</option><option value="valladolid">Valladolid</option><option value="vizcaya">Vizcaya</option><option value="zamora">Zamora</option><option value="zaragoza">Zaragoza</option></select><p>Ciudad:</p><label for="ciudad" class="sr-only">Ciudad:</label> <input default="0" type="text" name="ciudad" id="ciudad" class="form-control medio" placeholder="Ciudad..." busqueda="1" > </div><div class="col-md-2"><p>Baños:</p><label for="baños" class="sr-only">baños:</label> <input type="number" name="baños" id="baños" class="form-control peque" placeholder="0" min="0" busqueda="1"> <p>Habitaciones:</p><label for="habitaciones" class="sr-only">habitaciones:</label> <input type="number" default="0" name="habitaciones" id="habitaciones" class="form-control peque" placeholder="0" min="0" busqueda="1" > </div><div class="col-md-2"><p>Salon:</p><label for="baños" class="sr-only">Salon:</label> <input type="number" name="salon" id="salon" class="form-control peque" placeholder="0" min="0" busqueda="1"> <p>cocina:</p><label for="habitaciones" class="sr-only">cocina:</label> <input type="number" default="0" name="cocina" id="cocina" class="form-control peque" placeholder="0" min="0" busqueda="1" > </div></div></div></div></div></div><hr><div id="galleryContent" > </div>').appendTo('#contenido');
 	
 	$('#EmpezarBusqueda').click(function() {
 		
@@ -62,15 +62,17 @@ function ViewGalleryUser(){
 	
 	$('#contenido').empty();
 	
-	$('<br><br><div class="row"> <div class="col-lg-12"> <h1 class="page-header">Galeria <small>Usuarios</small> </h1> </div></div><hr>').appendTo('#contenido');
+	$('<br><br><div class="row"> <div class="col-lg-12"> <h1 class="page-header">Galeria <small>Usuarios</small> </h1> </div></div><hr><div class="row" id="galleryContent" > </div>').appendTo('#contenido');
 	
-	fillGalleryUser();
+	fillGalleryUser(usuarios);
 	
 }
 
 function fillGalleryPro (data){ 
 	
 	$('#galleryContent').empty();
+    
+    $('.easyPaginateNav').empty();
 	
 	data.map((element , index) => {
 	
@@ -127,16 +129,32 @@ function fillGalleryNot (){
 	
 }
 
-function fillGalleryUser (){
+function fillGalleryUser (data){
+    
+    $('#galleryContent').empty();
 	
-	usuarios.map(element => {
+	data.map(element => {
 	
-		var GalleryElement = '<div><p> Usuario: ' + element.nombre + '</p><p> ID: ' + element.id_usuario + '</p><p> Administrador: ' + element.admin + '</p><p> Email: ' + element.email + '</p></div><hr>';
+		var GalleryElement = '<div class="col-md-3"><p> Usuario: ' + element.nombre + '</p><p> ID: ' + element.id_usuario + '</p><p> Administrador: ' + element.admin + '</p><p> Email: ' + element.email + '</p><div id="del' + element.id_usuario + '"></div></div><hr>';
+        
+        var GalleryElementDeleteBtn = '<button class="btn btn-danger" type="button" id="DeleteUser" pro="' + element.id_usuario + '" > <h3>Eliminar</h3> </button><hr>';
 		
-		$(GalleryElement).appendTo('#contenido');
+		$(GalleryElement).appendTo('#galleryContent');
+        $(GalleryElementDeleteBtn).appendTo('#del' + element.id_usuario);
 		
 	});
-	
+    
+    $("button").click(function() {
+		
+		if($(this).attr("id") == "DeleteUser"){
+			
+			console.log($(this).attr("pro"));
+			UserRemove($(this).attr("pro"));
+			var index = usuarios.findIndex(i => i.id_usuario === ($(this).attr("pro")));
+			usuarios.splice(index, 1);
+			fillGalleryUser (usuarios);
+		}
+    })
 }
 
 function checkinf(info){
