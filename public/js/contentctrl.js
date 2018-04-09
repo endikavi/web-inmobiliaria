@@ -94,7 +94,11 @@ function fillGalleryPro (data){
 		
 	});
 	
-	$("button").click(function() {
+	paginador();
+    
+    $("#navbar").click(function() {
+    
+    $("button").click(function() {
 		
 		if($(this).attr("id") == "DeletePro"){
 			
@@ -112,8 +116,27 @@ function fillGalleryPro (data){
 		}
 	
 	});
+    
+    });
+        
+    $("button").click(function() {
+		
+		if($(this).attr("id") == "DeletePro"){
+			
+			console.log($(this).attr("pro"));
+			PropertyRemove($(this).attr("pro"));
+			var index = inmuebles.findIndex(i => i.id_inmueble === ($(this).attr("pro")));
+			inmuebles.splice(index, 1);
+			fillGalleryPro (inmuebles);
+		}
+		
+		if($(this).attr("id") == "FavoritePro"){
+			
+			console.log($(this).attr("pro"));
+			
+		}
 	
-	paginador();
+	});
 	
 }
 
