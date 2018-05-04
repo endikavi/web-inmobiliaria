@@ -43,15 +43,15 @@ function llamada(data, type, url, dataType, inf) {
         });
 };
 
-llamada('', "GET", "/inmobiliaria/lib/propertydata.php", "JSON", "inm");
-llamada('', "GET", "/inmobiliaria/lib/noticedata.php", "JSON", "not");
+llamada('', "GET", "lib/propertydata.php", "JSON", "inm");
+llamada('', "GET", "lib/noticedata.php", "JSON", "not");
 if(UserData[1] == 1){
-	llamada('', "GET", "/inmobiliaria/lib/userdata.php", "JSON", "use");
+	llamada('', "GET", "lib/userdata.php", "JSON", "use");
 }
 
 function PropertyRemove(id){
 	
-	var rurl = "/inmobiliaria/lib/propertyremove.php?ID=" + id;
+	var rurl = "lib/propertyremove.php?ID=" + id;
 	
 	if(UserData[1] == 1){
 	
@@ -63,7 +63,7 @@ function PropertyRemove(id){
 
 function UserRemove(id){
 	
-	var rurl = "/inmobiliaria/lib/userremove.php?ID=" + id;
+	var rurl = "lib/userremove.php?ID=" + id;
 	
 	if(UserData[1] == 1){
 	
