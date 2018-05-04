@@ -10,9 +10,9 @@
     <script src="public/js/bootstrap.bundle.min.js"></script>
 <!-- Control de usuario,contenido y llamadas ajax -->
 
-	<script type="text/javascript" src="/inmobiliaria/public/js/logctrl.js"></script>
-	<script type="text/javascript" src="/inmobiliaria/public/js/ajaxctrl.js"></script>
-	<script type="text/javascript" src="/inmobiliaria/public/js/paginador.js"></script>
-	<script type="text/javascript" src="/inmobiliaria/public/js/contentctrl.js"></script>
+	<script type="text/javascript" src="public/js/logctrl.js"></script>
+	<script type="text/javascript" src="public/js/ajaxctrl.js"></script>
+	<script type="text/javascript" src="public/js/paginador.js"></script>
+	<script type="text/javascript" src="public/js/contentctrl.js"></script>
 </body>
 </html>

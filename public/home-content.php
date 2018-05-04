@@ -10,7 +10,7 @@
       <div class="row">
 
         <div class="col-md-8">
-          <img class="img-fluid" src="/inmobiliaria/public/images/static-home.jpg" alt="">
+          <img class="img-fluid" src="public/images/static-home.jpg" alt="">
         </div>
 
         <div class="col-md-4">
@@ -35,25 +35,25 @@
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/home-02.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/home-02.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/noticia-01.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/noticia-01.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/naveindustrial-03.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/naveindustrial-03.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/noticia-02.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/noticia-02.jpg" alt="">
           </a>
         </div>
 
@@ -67,25 +67,25 @@
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/noticia-03.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/noticia-03.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/naveindustrial-02.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/naveindustrial-02.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/home-06.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/home-06.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid peque-img" src="/inmobiliaria/public/images/home-04.jpg" alt="">
+            <img class="img-fluid peque-img" src="public/images/home-04.jpg" alt="">
           </a>
         </div>
 
